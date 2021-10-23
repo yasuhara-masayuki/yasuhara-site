@@ -1,0 +1,48 @@
+.top .BlkNav{
+  display: block;
+  @include mq(lg){
+    display: none;
+  }
+}
+.BlkNav{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 40px;
+  transform: translate(0,-50%);
+  @include mq(lg){
+    display: none;
+  }
+  ul{
+    li{
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 40px;
+      &:first-child{
+        margin-top: 0;
+      }
+      a{
+        position: relative;
+        display: inline-block;
+        transition: .3s;
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          content: '';
+          width: 0;
+          height: 1px;
+          background-color: #fff;
+          transition: .3s;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+

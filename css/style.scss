@@ -1,0 +1,29 @@
+@charset "utf-8";
+$breakpoints: (
+  'sm': 'screen and (max-width: 375px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1023px)'
+) !default;
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+/*------plugin------*/
+@import 'plugin/fatnav/jquery.fatNav.css';
+/*------_BlkHeader------*/
+@import '_dev/_BlkHeader.scss';
+/*------BlkWrap------*/
+@import '_dev/_BlkWrap.scss';
+/*------BlkContent------*/
+@import '_dev/_BlkContent.scss';
+/*------BlkNav------*/
+@import '_dev/_BlkNav.scss';
+/*------BlkNews------*/
+@import '_dev/_BlkNews.scss';
+/*------BlkMain------*/
+@import '_dev/_BlkMain.scss';
+/*------title------*/
+@import '_dev/_title.scss';
+/*------slide------*/
+@import '_dev/_slide.scss';
